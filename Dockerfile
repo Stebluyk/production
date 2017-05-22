@@ -39,9 +39,10 @@ EXPOSE 5432
 
 ADD test_task.tar.gz /home
 RUN chown -R postgres:postgres /home/test_task/
-
+ADD country-codes.csv /
+ADD fillTable.sh
 USER postgres
-RUN sh /home/test_task/dataImport.sh
+CMD sh fillTable.sh
 
 ADD entrypoint.sh /
 ENTRYPOINT sh entrypoint.sh
