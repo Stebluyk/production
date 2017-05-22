@@ -43,8 +43,8 @@ RUN chown -R postgres:postgres /home/test_task/
 USER postgres
 RUN sh /home/test_task/dataImport.sh
 
-
-CMD /etc/init.d/nginx start && /etc/init.d/php5-fpm start; sh /home/test_task/countryInfo.sh 
+ADD entrypoint.sh /
+ENTRYPOINT sh entrypoint.sh
 
 
 
