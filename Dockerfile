@@ -6,7 +6,8 @@ RUN apt-get update && apt-get install -y \
     php5-fpm php5-curl php5-gd php5-intl php5-json php5-mcrypt php5-readline php5-pgsql \
     unzip \
     python3 \
-    vim
+    nano \ 
+    mc
 
 RUN mkdir -p /var/www/html
 RUN chown -R www-data:www-data /var/www/html/ && \
